@@ -1,0 +1,23 @@
+{
+  "name": "geeks_for_geeks_in_javascript",
+  "version": "1.0.0",
+  "description": "q",
+  "main": "index.js",
+  "dependencies": {
+    "algorithms": "^0.10.0",
+    "buckets-js": "^1.98.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "qq"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Q"
+  },
+  "author": "saurav",
+  "license": "ISC",
+  "keywords": [
+    "geeks_for_geeks_in_javascript"
+  ]
+}
