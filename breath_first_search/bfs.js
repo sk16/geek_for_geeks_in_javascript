@@ -25,7 +25,7 @@ Graph.prototype.bfs = function(s){
         {
 
             s = Que.dequeue();
-            console.log(s + " ");
+            process.stdout.write(s + " ");
             this.adj[s].forEach(function(i){
                 if (!visited[i])
                 {
