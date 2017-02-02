@@ -18,14 +18,19 @@ Graph.prototype.addEdge = function(v,w){
 Graph.prototype.dfsUtil = function(v,visited){
 
         visited[v] = true;
-        process.stdout.write(v + " ");
-        var self = this;
-        this.adj[v].forEach(function(i){
-                if (!visited[i])
-                {
-                    self.dfsUtil(i, visited);
-                }
-        });
+        if(process.stdout.write)
+            process.stdout.write(v + " ");
+        else
+            console.log(v);
+
+        var adj = this.adj[v];
+
+        for(var i = 0; i < adj.length; i++){ 
+            var n = adj.get(i);
+            if (!visited[n]){
+                   this.dfsUtil(n, visited);
+            }
+        }
 
 }
 
