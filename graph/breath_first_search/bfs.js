@@ -21,18 +21,25 @@ Graph.prototype.bfs = function(s){
 	var Que = new buckets.Queue();
     visited[s] = true;
     Que.add(s);
+    var adj;
     while (Que.size() !== 0)
         {
 
             s = Que.dequeue();
-            process.stdout.write(s + " ");
-            this.adj[s].forEach(function(i){
-                if (!visited[i])
-                {
-                    visited[i] = true;
-                    Que.add(i);
-                }
-            });
+            if(process.stdout.write)
+              process.stdout.write(s + " ");
+            else
+              console.log(s);
+            
+            adj = this.adj[s];
+
+            for(var i = 0; i < adj.size(); i++){ 
+                var n = adj.elementAtIndex(i);
+                if (!visited[n]){
+                   visited[n] = true;
+                   Que.add(n);
+               }
+            }
         }
 }
 

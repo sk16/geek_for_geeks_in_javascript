@@ -21,18 +21,26 @@ Graph.prototype.bfs = function(s){
 	var Que = new ds.Queue();
     visited[s] = true;
     Que.push(s);
+    var adj;
     while (Que.length !== 0)
         {
 
             s = Que.pop();
-            process.stdout.write(s + " ");
-            this.adj[s].forEach(function(i){
-                if (!visited[i])
-                {
-                    visited[i] = true;
-                    Que.push(i);
-                }
-            });
+
+            if(process.stdout.write)
+              process.stdout.write(s + " ");
+            else
+              console.log(s);
+
+            adj = this.adj[s];
+
+            for(var i = 0; i < adj.length; i++){ 
+                var n = adj.get(i);
+                if (!visited[n]){
+                   visited[n] = true;
+                   Que.push(n);
+               }
+            }
         }
 }
 
