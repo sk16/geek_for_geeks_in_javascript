@@ -27,5 +27,5 @@ function sieveOfEratosthenes(n){
 
 }
 console.time('sieveOfEratosthenes');
-sieveOfEratosthenes(100000000);
+sieveOfEratosthenes(30);
 console.timeEnd('sieveOfEratosthenes');
