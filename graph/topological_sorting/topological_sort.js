@@ -1,6 +1,7 @@
 var ds = require('algorithms').DataStructures;
 
 function print(s){
+    s = s.toString();
     if(process.stdout.write)
         process.stdout.write(s);
     else
